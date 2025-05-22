@@ -62,11 +62,11 @@
 
 ## Các truy vấn SQL yêu cầu
 
-a. Hiển thị số lượng khách hàng có trong bảng `khach_hang`
-b. Hiển thị đơn giá lớn nhất trong bảng `san_pham`
-c. Hiển thị số lượng sản phẩm thấp nhất trong bảng `san_pham`
-d. Hiển thị tổng số lượng sản phẩm có trong bảng `san_pham`
-e. Hiển thị số hóa đơn đã xuất trong tháng 12/2016 mà có trạng thái **chưa thanh toán**
-f. Hiển thị mã hóa đơn và số loại sản phẩm được mua trong từng hóa đơn
-g. Hiển thị mã hóa đơn và số loại sản phẩm được mua trong từng hóa đơn, **chỉ hiển thị các hóa đơn có từ 5 loại sản phẩm trở lên**
-h. Hiển thị thông tin bảng `hoa_don` gồm các cột `ma_hoa_don`, `ngay_mua_hang`, `ma_khach_hang`, **sắp xếp theo thứ tự giảm dần của `ngay_mua_hang`**
+- Hiển thị số lượng khách hàng có trong bảng `khach_hang`
+- Hiển thị đơn giá lớn nhất trong bảng `san_pham`
+- Hiển thị số lượng sản phẩm thấp nhất trong bảng `san_pham`
+- Hiển thị tổng số lượng sản phẩm có trong bảng `san_pham`
+- Hiển thị số hóa đơn đã xuất trong tháng 12/2016 mà có trạng thái **chưa thanh toán**
+- Hiển thị mã hóa đơn và số loại sản phẩm được mua trong từng hóa đơn
+- Hiển thị mã hóa đơn và số loại sản phẩm được mua trong từng hóa đơn, **chỉ hiển thị các hóa đơn có từ 5 loại sản phẩm trở lên**
+- Hiển thị thông tin bảng `hoa_don` gồm các cột `ma_hoa_don`, `ngay_mua_hang`, `ma_khach_hang`, **sắp xếp theo thứ tự giảm dần của `ngay_mua_hang`**
