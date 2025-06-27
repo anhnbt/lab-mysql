@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz System - Trang Chủ</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .logo {
+      max-height: 40px;
+      width: auto;
+    }
+
+    .sidebar {
+      min-height: calc(100vh - 56px);
+      background-color: #f8f9fa;
+      border-right: 1px solid #dee2e6;
+    }
+
+    .sidebar .nav-link {
+      color: #495057;
+      padding: 0.8rem 1rem;
+      border-radius: 0.25rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .sidebar .nav-link:hover {
+      background-color: rgba(0, 123, 255, 0.1);
+    }
+
+    .sidebar .nav-link.active {
+      background-color: rgba(0, 123, 255, 0.2);
+      font-weight: 500;
+    }
+
+    .sidebar .nav-link i {
+      margin-right: 0.5rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .quiz-card {
+      transition: transform 0.2s;
+    }
+
+    .quiz-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .quiz-status {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 3px 8px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+    }
+
+    .status-active {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .status-completed {
+      background-color: #cce5ff;
+      color: #004085;
+    }
+
+    .status-upcoming {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="https://via.placeholder.com/120x40?text=QUIZ-LOGO" alt="Quiz Logo" class="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="home.html"><i class="fas fa-home"></i> Trang Chủ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-award"></i> Kết Quả</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-history"></i> Lịch Sử</a>
+          </li>
+        </ul>
+        <form class="d-flex me-2">
+          <input class="form-control me-2" type="search" placeholder="Tìm kiếm bài quiz..." aria-label="Search">
+          <button class="btn btn-outline-light" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="dropdown">
+          <button class="btn btn-outline-light dropdown-toggle" type="button" id="userDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user-circle"></i> Nguyễn Văn A
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Thông tin cá nhân</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Cài đặt</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="index.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-lg-2 sidebar py-3 d-none d-lg-block">
+        <h5 class="mb-3 ps-3 fw-bold">Danh Mục</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#" class="nav-link active">
+              <i class="fas fa-graduation-cap"></i> Tất Cả Bài Quiz
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-code"></i> Lập Trình
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-calculator"></i> Toán Học
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-language"></i> Ngoại Ngữ
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-atom"></i> Khoa Học
+            </a>
+          </li>
+        </ul>
+        <h5 class="mb-3 mt-4 ps-3 fw-bold">Thông Tin</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-info-circle"></i> Giới Thiệu
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-question-circle"></i> Trợ Giúp
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-envelope"></i> Liên Hệ
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="col-lg-10 py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3><i class="fas fa-list"></i> Bài Quiz Gần Đây</h3>
+          <div class="dropdown">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              <i class="fas fa-filter"></i> Sắp Xếp
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Mới nhất</a></li>
+              <li><a class="dropdown-item" href="#">Cũ nhất</a></li>
+              <li><a class="dropdown-item" href="#">A-Z</a></li>
+              <li><a class="dropdown-item" href="#">Độ khó (Tăng dần)</a></li>
+              <li><a class="dropdown-item" href="#">Độ khó (Giảm dần)</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quiz Cards -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <!-- Quiz 1 -->
+          <div class="col">
+            <div class="card h-100 quiz-card">
+              <span class="quiz-status status-active">Đang diễn ra</span>
+              <img src="https://via.placeholder.com/300x150?text=Javascript+Quiz" class="card-img-top"
+                alt="Javascript Quiz">
+              <div class="card-body">
+                <h5 class="card-title">Quiz JavaScript Cơ Bản</h5>
+                <p class="card-text">30 câu hỏi về kiến thức JavaScript cơ bản. Thời gian làm bài: 45 phút.</p>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"><i class="fas fa-clock"></i> 45 phút</small>
+                  <small class="text-muted"><i class="fas fa-star"></i> Độ khó: Trung bình</small>
+                </div>
+                <button class="btn btn-primary w-100 mt-2"><i class="fas fa-play"></i> Bắt Đầu Làm Bài</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz 2 -->
+          <div class="col">
+            <div class="card h-100 quiz-card">
+              <span class="quiz-status status-completed">Đã hoàn thành</span>
+              <img src="https://via.placeholder.com/300x150?text=HTML+CSS+Quiz" class="card-img-top"
+                alt="HTML/CSS Quiz">
+              <div class="card-body">
+                <h5 class="card-title">Quiz HTML/CSS</h5>
+                <p class="card-text">25 câu hỏi về HTML5 và CSS3. Kiểm tra kiến thức về responsive design và layout.</p>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"><i class="fas fa-clock"></i> 30 phút</small>
+                  <small class="text-muted"><i class="fas fa-star"></i> Độ khó: Dễ</small>
+                </div>
+                <button class="btn btn-secondary w-100 mt-2"><i class="fas fa-eye"></i> Xem Kết Quả</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz 3 -->
+          <div class="col">
+            <div class="card h-100 quiz-card">
+              <span class="quiz-status status-upcoming">Sắp diễn ra</span>
+              <img src="https://via.placeholder.com/300x150?text=React+Quiz" class="card-img-top" alt="React Quiz">
+              <div class="card-body">
+                <h5 class="card-title">Quiz ReactJS Nâng Cao</h5>
+                <p class="card-text">20 câu hỏi về React Hooks, Context API và Redux. Kiểm tra kiến thức React chuyên
+                  sâu.</p>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"><i class="fas fa-clock"></i> 60 phút</small>
+                  <small class="text-muted"><i class="fas fa-star"></i> Độ khó: Khó</small>
+                </div>
+                <button class="btn btn-outline-primary w-100 mt-2"><i class="fas fa-bell"></i> Nhắc Nhở Khi Bắt
+                  Đầu</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz 4 -->
+          <div class="col">
+            <div class="card h-100 quiz-card">
+              <span class="quiz-status status-active">Đang diễn ra</span>
+              <img src="https://via.placeholder.com/300x150?text=Database+Quiz" class="card-img-top"
+                alt="Database Quiz">
+              <div class="card-body">
+                <h5 class="card-title">Quiz Cơ Sở Dữ Liệu SQL</h5>
+                <p class="card-text">35 câu hỏi về SQL, thiết kế database và tối ưu hóa truy vấn.</p>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"><i class="fas fa-clock"></i> 50 phút</small>
+                  <small class="text-muted"><i class="fas fa-star"></i> Độ khó: Trung bình</small>
+                </div>
+                <button class="btn btn-primary w-100 mt-2"><i class="fas fa-play"></i> Bắt Đầu Làm Bài</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz 5 -->
+          <div class="col">
+            <div class="card h-100 quiz-card">
+              <span class="quiz-status status-completed">Đã hoàn thành</span>
+              <img src="https://via.placeholder.com/300x150?text=Git+Quiz" class="card-img-top" alt="Git Quiz">
+              <div class="card-body">
+                <h5 class="card-title">Quiz Git và GitHub</h5>
+                <p class="card-text">15 câu hỏi về quản lý mã nguồn với Git, GitHub và quy trình làm việc hiệu quả.</p>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"><i class="fas fa-clock"></i> 20 phút</small>
+                  <small class="text-muted"><i class="fas fa-star"></i> Độ khó: Dễ</small>
+                </div>
+                <button class="btn btn-secondary w-100 mt-2"><i class="fas fa-eye"></i> Xem Kết Quả</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quiz 6 -->
+          <div class="col">
+            <div class="card h-100 quiz-card">
+              <span class="quiz-status status-upcoming">Sắp diễn ra</span>
+              <img src="https://via.placeholder.com/300x150?text=Node.js+Quiz" class="card-img-top" alt="Node.js Quiz">
+              <div class="card-body">
+                <h5 class="card-title">Quiz Node.js và Express</h5>
+                <p class="card-text">25 câu hỏi về Node.js, Express framework, RESTful API và middleware.</p>
+              </div>
+              <div class="card-footer bg-transparent">
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"><i class="fas fa-clock"></i> 40 phút</small>
+                  <small class="text-muted"><i class="fas fa-star"></i> Độ khó: Khó</small>
+                </div>
+                <button class="btn btn-outline-primary w-100 mt-2"><i class="fas fa-bell"></i> Nhắc Nhở Khi Bắt
+                  Đầu</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="mt-5">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1"><i class="fas fa-chevron-left"></i></a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Hệ Thống Quiz</h5>
+          <p>Nền tảng học tập và kiểm tra kiến thức trực tuyến.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Liên Kết</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Điều Khoản Sử Dụng</a></li>
+            <li><a href="#" class="text-white">Chính Sách Bảo Mật</a></li>
+            <li><a href="#" class="text-white">Trợ Giúp</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Kết Nối</h5>
+          <div class="d-flex">
+            <a href="#" class="text-white me-3"><i class="fab fa-facebook-square fa-2x"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-twitter-square fa-2x"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-youtube-square fa-2x"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-linkedin fa-2x"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <p class="mb-0">© 2025 Hệ Thống Quiz. Bản quyền thuộc về CodeGym.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
